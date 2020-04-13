@@ -1,5 +1,6 @@
 #include<iostream>
 #include "SmartPointer.hpp"
+#include "UniquePointer.hpp"
 using namespace std;
 
 class Demo {
@@ -21,10 +22,20 @@ int test_smartpointer() {
 	
 	return 0;
 }
+int test_uniquepointer()
+{
+	UniquePointer<Demo> pdemo(new Demo(100));
+	// 权限不可转移
+	//UniquePointer<Demo> pdemo2 = pdemo;
+	//UniquePointer<Demo> pdemo2(pdemo);
+	pdemo->func();
+	(*pdemo).func();
+	return 0;
+}
 int main()
 {
 	
 	test_smartpointer();
-
+	test_uniquepointer();
 	return 0;
 }
