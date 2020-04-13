@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="SharedPointer.hpp" />
     <ClInclude Include="SmartPointer.hpp" />
   </ItemGroup>
   <ItemGroup>

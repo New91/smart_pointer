@@ -1,6 +1,7 @@
 #include<iostream>
 #include "SmartPointer.hpp"
 #include "UniquePointer.hpp"
+#include "SharedPointer.hpp"
 using namespace std;
 
 class Demo {
@@ -32,10 +33,20 @@ int test_uniquepointer()
 	(*pdemo).func();
 	return 0;
 }
+
+int test_sharedpointer()
+{
+	SharedPointer<Demo> pdemo(new Demo(100));
+	SharedPointer<Demo> pdemo2 = pdemo;
+	pdemo2->func();
+	(*pdemo2).func();
+	return 0;
+}
 int main()
 {
 	
 	test_smartpointer();
 	test_uniquepointer();
+	test_sharedpointer();
 	return 0;
 }
